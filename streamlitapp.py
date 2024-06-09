@@ -17,6 +17,39 @@ from langchain.chains import SequentialChain
 with open("Response.json", "r") as file:
     RESPONSE_JSON = json.load(file)
 
+# Theme settings
+st.set_page_config(
+    page_title="MCQ Generator",
+    page_icon="📝",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+#Custom CSS for the theme
+st.markdown(
+    """
+    <style>
+    .css-18e3th9 {
+        background-color: #ecf0f1;
+    }
+    .css-1v3fvcr {
+        background-color: #bdc3c7;
+    }
+    .css-10trblm {
+        color: #2c3e50;
+    }
+    .css-6qob1r {
+        color: #2c3e50;
+    }
+    .stButton>button {
+        background-color: #3498db;
+        color: #ffffff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 #app title
 st.title("QuizCraft 🧠📚❓")
 
