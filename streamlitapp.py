@@ -1,3 +1,12 @@
+import sys
+# Get the directory of the current file (streamlitapp.py)
+current_dir = os.path.dirname(__file__)
+
+# Move up one directory level to the parent directory (project/)
+parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+
+# Add the parent directory to the system path
+sys.path.append(parent_dir)
 import os
 import json
 import traceback
