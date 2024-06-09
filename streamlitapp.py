@@ -13,9 +13,9 @@ import traceback
 import pandas as pd
 from dotenv import load_dotenv
 from src.mcq_generator.utils import read_file,get_table_data
+from src.mcq_generator.MCQGenerator import generate_evaluate_chain
 import streamlit as st
 from langchain.callbacks import get_openai_callback
-from src.mcq_generator import generate_evaluate_chain
 from src.mcq_generator.logger import logging
 
 #loading json file
