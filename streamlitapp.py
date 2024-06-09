@@ -14,7 +14,7 @@ from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 
 #loading json file
-with open(r"C:\Users\Diana\Desktop\MCQ Generator\Response.json", "r") as file:
+with open("Response.json", "r") as file:
     RESPONSE_JSON = json.load(file)
 
 #app title
