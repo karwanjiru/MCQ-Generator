@@ -1,22 +1,17 @@
-import sys
 import os
-# Get the directory of the current file (streamlitapp.py)
-current_dir = os.path.dirname(__file__)
-
-# Move up one directory level to the parent directory (project/)
-parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
-
-# Add the parent directory to the system path
-sys.path.append(parent_dir)
 import json
 import traceback
 import pandas as pd
-from dotenv import load_dotenv
-from src.mcq_generator.utils import read_file,get_table_data
-from src.mcq_generator.MCQGenerator import generate_evaluate_chain
 import streamlit as st
-from langchain.callbacks import get_openai_callback
+from dotenv import load_dotenv
+from src.mcq_generator.utils import read_file, get_table_data
 from src.mcq_generator.logger import logging
+
+# Importing necessary packages from LangChain
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain.chains import SequentialChain
 
 #loading json file
 with open(r"C:\Users\Diana\Desktop\MCQ Generator\Response.json", "r") as file:
